@@ -1,0 +1,16 @@
+<h1>Members Only Posts</h1>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="post">
+      <% @posts.each do |post| %>
+        <h3><%=post.title %></h3>
+        <p><%= post.body %></p>
+
+        <% if signed_in? %>
+          <h5>Posted by: <%= get_name(post.user_id) %></h5>
+        <% end %>
+      <% end %>
+    </section>
+  </aside>
+</div>
